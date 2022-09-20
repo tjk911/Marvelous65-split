@@ -15,34 +15,34 @@ Much like his original repo - you'll have to order these PCBs off of a site like
 You can upload the Gerbers I included to JLCPCB (`Hardware/Gerbers/Gerbers.zip`) or generate them yourself from the Kicad project file.
 
 Options I chose, many of them are default, but I'm including them here for anyone that might find it useful:
-1. Base material: FR-4
-2. Layers: 2
-3. Dimensions: 345.28 * 107.17 (this should be default)
-4. Panel Qty: 5 (this is the minimum)
-5. Product Type: Industrial/Consumer electronics
-6. Different design: 2 
+- Base material: FR-4
+- Layers: 2
+- Dimensions: 345.28 * 107.17 (this should be default)
+- Panel Qty: 5 (this is the minimum)
+- Product Type: Industrial/Consumer electronics
+- Different design: 2 
   - This defaults to 1 but it's 2 as they're two separate boards
-7. Delivery Format: Panel by Customer
-8. PCB Thickness: 1.6
-9. PCB Color: Hey, you do you
-10. Silkscreen: White
-11. Silkscreen Technology: Ink-jet/Screen Printing Silkscreen
-12. Sufrace Finish: LeadFree HASL
-13. Outer Copper Weight: 1 oz
-14. Gold Fingers: No
-15. Confirm Production file: Yes
-16. Flying Probe Test: Fully Test
-17. Castellated Holes: No
-18. Remove Order Number: No
+- Delivery Format: Panel by Customer
+- PCB Thickness: 1.6
+- PCB Color: Hey, you do you
+- Silkscreen: White
+- Silkscreen Technology: Ink-jet/Screen Printing Silkscreen
+- Sufrace Finish: LeadFree HASL
+- Outer Copper Weight: 1 oz
+- Gold Fingers: No
+- Confirm Production file: Yes
+- Flying Probe Test: Fully Test
+- Castellated Holes: No
+- Remove Order Number: No
 
 ### PCB Assembly options
 
-1. PCBA Type: Standard
-2. Assembly Side: Both Sides 
- - I believe you only need the Bottom, but I opted not to risk it during my first build
-3. PCBA Qty: 5
-4. Edge Rails/Fiducials: Added by JLCPCB
-5. Confirm Parts Placement: Yes
+- PCBA Type: Standard
+- Assembly Side: Both Sides 
+  - I believe you only need the Bottom, but I opted not to risk it during my first build
+- PCBA Qty: 5
+- Edge Rails/Fiducials: Added by JLCPCB
+- Confirm Parts Placement: Yes
 
 After this, you'll need to upload a BOM file and a CPL file. These are `Marvelous65 Split-bom.csv` and `Marvelous65 Split-all-pos.csv` respectively.
 
