@@ -2,11 +2,16 @@
 
 All the credit goes to [karnadii](https://github.com/karnadii/marvelous65). This repo is primarily for my documentation purposes, and as a guide for anyone that would like to build this but might be as inexperienced as I was when I attempted building this.
 
-Shoutout to karnadii, Nicell and the other zmk and nice!nano discord folks that helped me get as far as I did.
+Shoutout to [karnadii](https://github.com/karnadii), [Nicell](https://github.com/nicell), bravekarma and the other zmk and nice!nano discord folks that helped me get as far as I did.
 
 ## Differences from karnadii's original
 
-I'm running nice!nano on my build instead of nrfmicro. So far, there's barely any difference other than building the firmware.
+I'm running nice!nano on my build instead of nrfmicro. 
+
+If you're buildings his other layouts (marvelous65 and marvelous65-ergo), some of my changes might work there as well. YMMV.
+
+- added nice_nano_v2.overlay, with changes to the mosi-pin
+- added oled changes to marvelous_split.dtsi, a zmk change implemented [here](https://zmk.dev/blog/2022/04/02/zephyr-3-0#display-selection)
 
 ## 1. Ordering your PCB
 
@@ -64,8 +69,8 @@ For this keyboard specifically, you'll need at least:
   - I opted for ones with JST sockets
 - 2x [Machine sockets and pins](https://typeractive.xyz/products/nice-nano)
   - Technically a nice-to-have but this saved me from a screwup, and it's helpful to be able to unplug the board for troubleshooting
-- 2x 128x32 OLED
-  - I've yet to implement this as ZMK seems to have an [OLED issue](https://github.com/zmkfirmware/zmk/issues/674), but I believe a kit [like this](https://smile.amazon.com/gp/product/B0925V1DZK/) should work
+- 2x [128x32 OLED](https://smile.amazon.com/dp/B08ZY4YBHL)
+  - Note: ZMK seems to have an [OLED issue](https://github.com/zmkfirmware/zmk/issues/674)
 - 2x rotary encoder and knob
 - 2x USB-C cables
   - You could just cut up USB-C cables you have and solder one end to the board and plug the other into your nice!nano, but note that the clearance for the nice!nano USB-C and the reset button etc is very slim
@@ -73,4 +78,12 @@ For this keyboard specifically, you'll need at least:
 - Case for the keyboard
   - I'm having mine printed from [craftcloud3d](https://craftcloud3d.com/), and they provided me with a 10% referral code: `REF49BRI7SK`
   - The .stl files worked better in my case, and a full PLA build cost about $50-60
+- **Optional**
+  - Elegoo wire jumper cables
+    - I'm soldering these for RGB lighting in order to retain removability - female on nice!nano and male on the PCB
 
+## If you run into Zephyr build issues after installing zmk and zephy, make sure you have this in your .src file (bashrc or zshrc)
+``````
+export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
+export GNUARMEMB_TOOLCHAIN_PATH=$(brew --prefix) 
+``````
