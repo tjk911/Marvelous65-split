@@ -84,15 +84,23 @@ For this keyboard specifically, you'll need at least:
 
 ## 3. Firmware/Software
 
-You have two options here. Once built, you could simply rename the `marvelous65_split_left.uf2` and `marvelous65_split_right.uf2` to `zmk.uf2` files, and drop them into your left/right nice!nano board once it's connected to your machine as a USB device. 
+You have two options here. 
 
+### Use included files
+Once built, you could simply rename the `marvelous65_split_left.uf2` and `marvelous65_split_right.uf2` to `zmk.uf2` files, and drop them into your left/right nice!nano board once it's connected to your machine as a USB device. 
+
+### Build your own
 If you're looking to make changes to the keymaps etc, I followed [zmk's development setup instructions](https://zmk.dev/docs/development/setup) and [zephyr's installation guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) as well. 
 
-After that's done, you can copy/paste the `marvelous56_split` folder under `Firmware` into `zmk/app/boards/shields/`. In your terminal, you can generate both left/right files at the same time with this command:
+After that's done, you can copy/paste the files in the `Firmware\marvelous65_split` folder into `zmk/app/boards/shields/marvelous65_split`. 
 
-```build -d build/right -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_right && west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_left```
+In your terminal, you can generate both left/right files at the same time with this command:
 
-## If you run into Zephyr build issues after installing zmk and zephy, make sure you have this in your .src file (bashrc or zshrc)
+```
+build -d build/right -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_right && west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_left
+```
+
+If you run into Zephyr build issues after installing zmk and zephy, make sure you have this in your .src file (bashrc or zshrc)
 ``````
 export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
 export GNUARMEMB_TOOLCHAIN_PATH=$(brew --prefix) 
