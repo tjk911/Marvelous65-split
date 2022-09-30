@@ -1,6 +1,6 @@
-# Marvelous65 Split (Forked from karnadii)
+# Marvelous65 Split
 
-All the credit goes to [karnadii](https://github.com/karnadii/marvelous65). This repo is primarily for my documentation purposes, and as a guide for anyone that would like to build this but might be as inexperienced as I was when I attempted building this.
+All the credit goes to [karnadii](https://github.com/karnadii/marvelous65) for his initial work. This repo is primarily for my documentation purposes and as a guide for anyone that would like to build this but might be as inexperienced as I was when I attempted this. This contains only documentation and updates to the split layout.
 
 Shoutout to [karnadii](https://github.com/karnadii), [Nicell](https://github.com/nicell), bravekarma and the other zmk and nice!nano discord folks that helped me get as far as I did.
 
@@ -12,6 +12,13 @@ If you're buildings his other layouts (marvelous65 and marvelous65-ergo), some o
 
 - added nice_nano_v2.overlay, with changes to the mosi-pin
 - added oled changes to marvelous_split.dtsi, a zmk change implemented [here](https://zmk.dev/blog/2022/04/02/zephyr-3-0#display-selection)
+- updated marvelous65_split.dtsi to reverse flipped encoder
+
+
+## Known issues
+- [OLED issue](https://github.com/zmkfirmware/zmk/issues/674)
+- [Split peripheral encoder](https://github.com/zmkfirmware/zmk/pull/728)
+  - I pulled [infused-tree](https://github.com/infused-kim/zmk/tree/my-changes/split-encoder)'s changes pending it getting merged into ZMK. So far working OK as of 9/30/22.
 
 ## 1. Ordering your PCB
 
@@ -97,7 +104,7 @@ After that's done, you can copy/paste the files in the `Firmware\marvelous65_spl
 In your terminal, you can generate both left/right files at the same time with this command:
 
 ```
-build -d build/right -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_right && west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_left
+west build -d build/right -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_right && west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=marvelous65_split_left
 ```
 
 If you run into Zephyr build issues after installing zmk and zephy, make sure you have this in your .src file (bashrc or zshrc)
@@ -105,3 +112,4 @@ If you run into Zephyr build issues after installing zmk and zephy, make sure yo
 export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
 export GNUARMEMB_TOOLCHAIN_PATH=$(brew --prefix) 
 ``````
+
