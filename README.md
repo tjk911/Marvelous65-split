@@ -19,6 +19,9 @@ If you're buildings his other layouts (marvelous65 and marvelous65-ergo), some o
 - [OLED issue](https://github.com/zmkfirmware/zmk/issues/674)
 - [Split peripheral encoder](https://github.com/zmkfirmware/zmk/pull/728)
   - I pulled [infused-tree](https://github.com/infused-kim/zmk/tree/my-changes/split-encoder)'s changes pending it getting merged into ZMK. So far working OK as of 9/30/22.
+- Case does not have access to reset button, or on/off switch toggle
+- Seeming to have some lag between the left and the right side in terms of input, I type at a range of 90-130WPM depending on the day but I'm not sure if it's apparent for folks that type slower
+
 
 ## 1. Ordering your PCB
 
@@ -88,6 +91,13 @@ For this keyboard specifically, you'll need at least:
 - **Optional**
   - Elegoo wire jumper cables
     - I'm soldering these for RGB lighting in order to retain removability - female on nice!nano and male on the PCB
+  - If you're building the case included in the repo:
+    - M2*5mm
+      - You'll need at least eight of these for each corner of the case
+    - M2 screws
+      - 4x 12mm for the front
+      - 4x 20mm to 24mm for the rear corners
+        - I'm using 4x20mm but I'd recommend getting 22mm to be safe, it's barely grabbing the top case at all
 
 ## 3. Firmware/Software
 
